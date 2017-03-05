@@ -6,7 +6,7 @@ Builds Dart protocol buffers.
 
 Make a protobuf file:
 
-```
+```proto
 syntax = "proto2";
 
 package address_book;
@@ -38,13 +38,13 @@ message AddressBook {
 
 Run the command:
 
-```
+```bash
 pbuf address_book.proto
 ```
 
 Enjoy your new Protocol Buffer!
 
-```
+```dart
 import 'package:dart_protobuf_example/address_book.pb.dart';
 
 main() {
@@ -62,13 +62,13 @@ main() {
 
 Install the latest `protoc` command:
 
-```
+```bash
 brew install protoc
 ```
 
 Install dart_protoc_plugin on your machine:
  
-```
+```bash
 git clone git@github.com:dart-lang/dart-protoc-plugin.git
 cd dart-protoc-plugin
 pub get
@@ -76,7 +76,7 @@ pub get
 
 Install this tool:
 
-```
+```bash
 pub global activate protobuf_runner
 ```
 
@@ -85,21 +85,21 @@ pub global activate protobuf_runner
 
 Option 1: using the `DART_PROTOC_PLUGIN` environment variable:
 
-```
+```bash
 export DART_PROTOC_PLUGIN=/path/to/dart-protoc-plugin 
 pbuf /path/to/project/lib/address_book.proto
 ```
 
 Option 2: using the `--plugin` flag:
 
-```
+```bash
 pbuf --plugin=/path/to/dart-protoc-plugin /path/to/project/lib/address_book.proto
 ```
 
 ## Contributing
 
 to install locally: 
-```
+```bash
 pub global activate --source path  /path/to/protobuf_runner/
 ```
 
