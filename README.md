@@ -55,6 +55,7 @@ main() {
   var x = new AddressBook();
   x.people.addAll(people);
   print(x.writeToJson());
+  // prints {"1":[{"1":"Jack Ryan","3":"jack.ryan@gmail.com"},{"1":"Brad Ryan","3":"brad.ryan@gmail.com"}]}
 }
 ```
 
