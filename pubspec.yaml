@@ -1,9 +1,12 @@
 name: protobuf_runner
+author: John Ryan <john.p.ryan4@gmail.com>
+homepage: https://github.com/johnpryan/dart-protobuf-runner
+
 version: 1.0.0
 description: builds .proto for Dart
 
 environment:
-  sdk: '>=1.0.0 <2.0.0'
+  sdk: ">=1.8.0 <2.0.0"
 
 dependencies:
   args: ^0.13.7

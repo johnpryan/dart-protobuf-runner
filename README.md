@@ -2,22 +2,79 @@
 
 Builds Dart protocol buffers.
 
-## Installation:
+## Example:
 
-Install dart_protoc_plugin on your machine and run `pub get`.
+Make a protobuf file:
 
-then install this command using `pub global activate protobuf_runner`
+```
+syntax = "proto2";
+
+package address_book;
+
+message Person {
+    required string name = 1;
+    required int32 id = 2;
+    optional string email = 3;
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber {
+        required string number = 1;
+        optional PhoneType type = 2 [default = HOME];
+    }
+
+    repeated PhoneNumber phones = 4;
+}
+
+message AddressBook {
+    repeated Person people = 1;
+}
+
+```
+
+Run the command:
+
+```
+pbuf address_book.proto
+```
+
+## Getting Started:
+
+Install the latest `protoc` command:
+
+```
+brew install protoc
+```
+
+Install dart_protoc_plugin on your machine:
+ 
+```
+git clone git@github.com:dart-lang/dart-protoc-plugin.git
+cd dart-protoc-plugin
+pub get
+```
+
+Install this tool:
+
+```
+pub global activate protobuf_runner
+```
 
 ## Usage
 
-using the `DART_PROTOC_PLUGIN` environment variable:
+
+Option 1: using the `DART_PROTOC_PLUGIN` environment variable:
 
 ```
 export DART_PROTOC_PLUGIN=/path/to/dart-protoc-plugin 
 pbuf /path/to/project/lib/address_book.proto
 ```
 
-using the `--plugin` flag:
+Option 2: using the `--plugin` flag:
 
 ```
 pbuf --plugin=/path/to/dart-protoc-plugin /path/to/project/lib/address_book.proto
@@ -29,3 +86,9 @@ to install locally:
 ```
 pub global activate --source path  /path/to/protobuf_runner/
 ```
+
+## Issues
+
+Please use the [Issue Tracker][issues]
+
+[issues]: https://github.com/johnpryan/dart-protobuf-runner/issues
