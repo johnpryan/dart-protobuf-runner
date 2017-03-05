@@ -42,6 +42,22 @@ Run the command:
 pbuf address_book.proto
 ```
 
+Enjoy your new Protocol Buffer!
+
+```
+import 'package:dart_protobuf_example/address_book.pb.dart';
+
+main() {
+  var people = [
+    new Person()..name = "Jack Ryan"..email = "jack.ryan@gmail.com",
+    new Person()..name = "Brad Ryan"..email = "brad.ryan@gmail.com"
+  ];
+  var x = new AddressBook();
+  x.people.addAll(people);
+  print(x.writeToJson());
+}
+```
+
 ## Getting Started:
 
 Install the latest `protoc` command:
