@@ -1,0 +1,13 @@
+name: protobuf_runner
+version: 1.0.0
+description: builds .proto for Dart
+
+environment:
+  sdk: '>=1.0.0 <2.0.0'
+
+dependencies:
+  args: ^0.13.7
+  path: ^1.4.1
+
+executables:
+  pbuf: main
